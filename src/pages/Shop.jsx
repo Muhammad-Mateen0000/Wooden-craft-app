@@ -116,7 +116,11 @@ function Shop() {
           {/* Responsive Product Grid */}
           <div className="grid w-full min-w-0 grid-cols-1 gap-4 min-[480px]:grid-cols-2 sm:gap-5 xl:grid-cols-3">
             {displayedProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard
+                key={product.id}
+                product={product}
+                imageLoading="lazy"
+              />
             ))}
           </div>
 

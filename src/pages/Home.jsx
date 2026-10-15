@@ -16,8 +16,7 @@ const heroSlides = [
     title: "Beautiful Wooden Crafts for Every Home",
     description:
       "Discover timeless handcrafted wooden furniture and home decor designed to bring warmth, comfort, and natural beauty into your space.",
-    image:
-      "/images/1.avif",
+    image: "/images/1.avif",
   },
   {
     id: 2,
@@ -25,8 +24,7 @@ const heroSlides = [
     title: "Timeless Furniture Built to Last",
     description:
       "Explore carefully crafted wooden furniture that combines natural materials, quality craftsmanship, and everyday comfort.",
-    image:
-      "/images/3.avif",
+    image: "/images/3.avif",
   },
   {
     id: 3,
@@ -34,16 +32,18 @@ const heroSlides = [
     title: "Bring Warmth and Nature Into Your Home",
     description:
       "Find unique wooden pieces that add character, warmth, and a natural touch to every corner of your home.",
-    image:
-      "/images/2.avif",
+    image: "/images/2.avif",
   },
 ];
 
 function Home() {
-  const topSellingProducts = products.filter((product) => product.isTopSelling);
+  const topSellingProducts = products.filter(
+    (product) => product.isTopSelling
+  );
 
   return (
     <main>
+      {/* Hero Slider */}
       <section>
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -59,12 +59,15 @@ function Home() {
           }}
           className="h-[420px] sm:h-[500px] lg:h-[540px]"
         >
-          {heroSlides.map((slide) => (
+          {heroSlides.map((slide, index) => (
             <SwiperSlide key={slide.id}>
               <div className="relative h-full">
                 <img
                   src={slide.image}
                   alt={slide.title}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  decoding="async"
                   className="h-full w-full object-cover brightness-[0.65]"
                 />
 
@@ -101,6 +104,7 @@ function Home() {
         </Swiper>
       </section>
 
+      {/* Top-Selling Products */}
       <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -128,7 +132,11 @@ function Home() {
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {topSellingProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              imageLoading="eager"
+            />
           ))}
         </div>
       </section>
