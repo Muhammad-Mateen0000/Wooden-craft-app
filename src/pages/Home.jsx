@@ -51,7 +51,7 @@ function Home() {
           loop
           speed={900}
           autoplay={{
-            delay: 5000,
+            delay: 9000,
             disableOnInteraction: false,
           }}
           pagination={{
