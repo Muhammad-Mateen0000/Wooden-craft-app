@@ -17,7 +17,7 @@ const heroSlides = [
     description:
       "Discover timeless handcrafted wooden furniture and home decor designed to bring warmth, comfort, and natural beauty into your space.",
     image:
-      "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1600&q=80",
+      "/images/1.avif",
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const heroSlides = [
     description:
       "Explore carefully crafted wooden furniture that combines natural materials, quality craftsmanship, and everyday comfort.",
     image:
-      "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1600&q=80",
+      "/images/3.avif",
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const heroSlides = [
     description:
       "Find unique wooden pieces that add character, warmth, and a natural touch to every corner of your home.",
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80",
+      "/images/2.avif",
   },
 ];
 
